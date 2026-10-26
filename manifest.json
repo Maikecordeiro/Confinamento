@@ -1,0 +1,19 @@
+{
+  "name": "Meu Confinamento",
+  "short_name": "Confinamento",
+  "description": "Controle offline do gado confinado",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f5ef",
+  "theme_color": "#234b36",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "pt-BR"
+}

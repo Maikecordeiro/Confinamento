@@ -1,0 +1,31 @@
+MEU CONFINAMENTO — PWA OFFLINE (PRIMEIRA VERSÃO)
+
+Inclui cadastro de animais, histórico de pesagens, alimentação por lote, custos, vendas,
+sanidade, backup completo JSON e exportação CSV dos animais. Os registros ficam no navegador
+do aparelho. Não há login, servidor ou sincronização entre aparelhos nesta versão.
+
+INSTALAÇÃO NO IPHONE
+O app precisa ser publicado em HTTPS para permitir instalação e cache offline. Não abra
+index.html como arquivo local e espere o modo offline funcionar.
+
+Opção de hospedagem estática gratuita:
+1. Em um computador, crie conta em https://github.com/ e um repositório novo chamado
+   meu-confinamento. Não coloque dados reais no repositório.
+2. Envie todos os arquivos desta pasta para a raiz do repositório.
+3. Abra Settings > Pages; selecione Deploy from a branch, branch main e pasta /(root).
+4. Aguarde a URL HTTPS do Pages.
+5. Abra essa URL no Safari do iPhone com internet e espere carregar.
+6. Compartilhar > Adicionar à Tela de Início > Adicionar.
+7. Abra pelo ícone enquanto online para que os arquivos sejam armazenados em cache.
+8. Teste com dados fictícios: feche, ligue modo avião, abra de novo e confira se os dados
+   permanecem acessíveis. Depois desligue modo avião e faça backup JSON.
+
+BACKUP E LIMITAÇÕES
+- Use a aba Backup para baixar JSON frequentemente e guarde-o fora do iPhone.
+- Limpar dados do site/Safari pode apagar os registros locais.
+- Esta versão não sincroniza automaticamente entre aparelhos.
+- Receita bruta = quantidade x preço unitário. Lucro líquido e rateio de custos coletivos
+  ainda não foram implementados.
+- Venda por arroba: confirme a unidade/padrão acordado com o comprador.
+- Não há login nem criptografia do banco local; proteja o iPhone.
+- Teste a restauração de backup antes de usar com registros reais.
