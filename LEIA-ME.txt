@@ -1,31 +1,21 @@
-MEU CONFINAMENTO — PWA OFFLINE (PRIMEIRA VERSÃO)
+MEU CONFINAMENTO — VERSÃO 2
 
-Inclui cadastro de animais, histórico de pesagens, alimentação por lote, custos, vendas,
-sanidade, backup completo JSON e exportação CSV dos animais. Os registros ficam no navegador
-do aparelho. Não há login, servidor ou sincronização entre aparelhos nesta versão.
+Esta versão acrescenta o painel de lucro/prejuízo por animal e por lote, mantendo os dados salvos localmente e o funcionamento essencial offline.
 
-INSTALAÇÃO NO IPHONE
-O app precisa ser publicado em HTTPS para permitir instalação e cache offline. Não abra
-index.html como arquivo local e espere o modo offline funcionar.
+COMO PUBLICAR ATUALIZAÇÃO
+1. Antes de tudo, abra o app instalado e entre em Backup e dados. Toque em “Baixar backup completo (JSON)” e guarde o arquivo. Como você ainda não cadastrou animais reais, provavelmente não há dados importantes, mas faça o backup por segurança.
+2. Extraia este ZIP. Ele contém a pasta meu_confinamento_pwa com os arquivos do site.
+3. No mesmo repositório GitHub Pages onde publicou a primeira versão, substitua os arquivos antigos pelos arquivos desta pasta. Não crie um endereço/site novo: mantenha o mesmo endereço publicado.
+4. Faça commit/publish no GitHub. Aguarde a publicação terminar.
+5. No iPhone, abra o endereço do site no Safari com internet, recarregue a página e aguarde alguns segundos para a atualização offline ser armazenada. Depois abra pelo ícone da tela inicial. Se ainda aparecer a versão antiga, feche o app e abra novamente; pode ser necessário recarregar o site no Safari mais uma vez.
 
-Opção de hospedagem estática gratuita:
-1. Em um computador, crie conta em https://github.com/ e um repositório novo chamado
-   meu-confinamento. Não coloque dados reais no repositório.
-2. Envie todos os arquivos desta pasta para a raiz do repositório.
-3. Abra Settings > Pages; selecione Deploy from a branch, branch main e pasta /(root).
-4. Aguarde a URL HTTPS do Pages.
-5. Abra essa URL no Safari do iPhone com internet e espere carregar.
-6. Compartilhar > Adicionar à Tela de Início > Adicionar.
-7. Abra pelo ícone enquanto online para que os arquivos sejam armazenados em cache.
-8. Teste com dados fictícios: feche, ligue modo avião, abra de novo e confira se os dados
-   permanecem acessíveis. Depois desligue modo avião e faça backup JSON.
+CÁLCULO DO RESULTADO
+• Resultado geral = receitas de vendas − compras dos animais − alimentação − custos lançados − sanidade.
+• Resultado por lote soma os animais cadastrados naquele lote e os lançamentos vinculados ao lote.
+• Resultado individual inclui o valor de compra do animal, despesas ligadas diretamente a ele e rateio por cabeça dos custos e vendas coletivos lançados para seu lote. O rateio considera os animais atualmente cadastrados nesse lote.
+• Para atribuir receitas/despesas a um animal, selecione o animal. Para distribuir pelo lote, deixe animal sem seleção e informe o lote. Lançamentos sem animal e sem lote entram no resultado geral, mas não podem ser atribuídos a um lote/animal.
+• Não lance a mesma compra duas vezes: use o campo “Valor compra” do cadastro do animal OU um custo de compra vinculado ao animal.
+• Para resultados mais precisos, mantenha os lotes atualizados e lance todas as compras, rações, despesas, tratamentos e vendas. O sistema não sincroniza entre aparelhos.
 
-BACKUP E LIMITAÇÕES
-- Use a aba Backup para baixar JSON frequentemente e guarde-o fora do iPhone.
-- Limpar dados do site/Safari pode apagar os registros locais.
-- Esta versão não sincroniza automaticamente entre aparelhos.
-- Receita bruta = quantidade x preço unitário. Lucro líquido e rateio de custos coletivos
-  ainda não foram implementados.
-- Venda por arroba: confirme a unidade/padrão acordado com o comprador.
-- Não há login nem criptografia do banco local; proteja o iPhone.
-- Teste a restauração de backup antes de usar com registros reais.
+OFFLINE E BACKUP
+O aplicativo continua sendo uma PWA e guarda os dados neste navegador/aparelho. O app shell fica disponível offline após abrir o site publicado com internet pelo menos uma vez. Os dados não são enviados para servidor nem sincronizados. Faça backups JSON regulares e guarde-os fora do aparelho.
