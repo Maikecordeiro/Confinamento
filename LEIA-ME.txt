@@ -1,21 +1,23 @@
-MEU CONFINAMENTO — VERSÃO 2
+MEU CONFINAMENTO — VERSÃO 3
 
-Esta versão acrescenta o painel de lucro/prejuízo por animal e por lote, mantendo os dados salvos localmente e o funcionamento essencial offline.
+NOVOS RECURSOS
+• GMD automático: ganho médio diário calculado com as duas pesagens mais recentes em datas diferentes. Fórmula: (peso mais recente − peso anterior) ÷ número de dias entre as pesagens. Se houver menos de duas datas de pesagem, o app informa que ainda precisa de dados.
+• Armazém: cadastro de insumos e rações, com preço do saco, peso do saco, preço por kg automático e estoque em kg.
+• Movimentação do armazém: entradas e saídas manuais de estoque. Ao registrar alimentação de um lote, você também pode selecionar uma ração pronta do armazém; o sistema calcula o custo pelo preço/kg e desconta automaticamente a quantidade do estoque.
+• Preparação de ração: escolha até cinco insumos, informe os kg de cada um, confirme que a soma corresponde ao peso final do traço, calcule custo total/custo por kg, desconte insumos do estoque e acrescente a ração pronta ao estoque.
 
-COMO PUBLICAR ATUALIZAÇÃO
-1. Antes de tudo, abra o app instalado e entre em Backup e dados. Toque em “Baixar backup completo (JSON)” e guarde o arquivo. Como você ainda não cadastrou animais reais, provavelmente não há dados importantes, mas faça o backup por segurança.
-2. Extraia este ZIP. Ele contém a pasta meu_confinamento_pwa com os arquivos do site.
-3. No mesmo repositório GitHub Pages onde publicou a primeira versão, substitua os arquivos antigos pelos arquivos desta pasta. Não crie um endereço/site novo: mantenha o mesmo endereço publicado.
-4. Faça commit/publish no GitHub. Aguarde a publicação terminar.
-5. No iPhone, abra o endereço do site no Safari com internet, recarregue a página e aguarde alguns segundos para a atualização offline ser armazenada. Depois abra pelo ícone da tela inicial. Se ainda aparecer a versão antiga, feche o app e abra novamente; pode ser necessário recarregar o site no Safari mais uma vez.
+COMO PUBLICAR
+1. Faça backup em Backup > Baixar backup completo (JSON).
+2. Extraia este ZIP.
+3. No mesmo repositório GitHub Pages usado na versão anterior, substitua todos os arquivos pelos arquivos desta pasta. Mantenha o mesmo endereço.
+4. Publique as alterações e aguarde.
+5. No iPhone, abra o endereço do app no Safari com internet e recarregue para atualizar o cache offline. Depois abra pelo ícone da tela inicial.
+6. Teste primeiro com dados fictícios e confira os cálculos antes de usar no controle real.
 
-CÁLCULO DO RESULTADO
-• Resultado geral = receitas de vendas − compras dos animais − alimentação − custos lançados − sanidade.
-• Resultado por lote soma os animais cadastrados naquele lote e os lançamentos vinculados ao lote.
-• Resultado individual inclui o valor de compra do animal, despesas ligadas diretamente a ele e rateio por cabeça dos custos e vendas coletivos lançados para seu lote. O rateio considera os animais atualmente cadastrados nesse lote.
-• Para atribuir receitas/despesas a um animal, selecione o animal. Para distribuir pelo lote, deixe animal sem seleção e informe o lote. Lançamentos sem animal e sem lote entram no resultado geral, mas não podem ser atribuídos a um lote/animal.
-• Não lance a mesma compra duas vezes: use o campo “Valor compra” do cadastro do animal OU um custo de compra vinculado ao animal.
-• Para resultados mais precisos, mantenha os lotes atualizados e lance todas as compras, rações, despesas, tratamentos e vendas. O sistema não sincroniza entre aparelhos.
-
-OFFLINE E BACKUP
-O aplicativo continua sendo uma PWA e guarda os dados neste navegador/aparelho. O app shell fica disponível offline após abrir o site publicado com internet pelo menos uma vez. Os dados não são enviados para servidor nem sincronizados. Faça backups JSON regulares e guarde-os fora do aparelho.
+IMPORTANTE SOBRE ESTOQUE E CUSTOS
+• O app guarda os dados localmente no aparelho. Não limpe os dados do site e faça backups regulares.
+• A preparação de ração atualiza o estoque e fica no histórico de traços, sem ser lançada como despesa do lote. Isso evita contar a mesma ração como custo duas vezes. Quando fornecer a ração a um lote, registre o consumo em Alimentação e selecione a ração pronta do armazém: o custo será calculado automaticamente e o estoque será reduzido. Não registre também uma saída manual para o mesmo consumo, pois isso descontaria o estoque duas vezes.
+• Para calcular o GMD, registre pelo menos duas pesagens do mesmo animal em datas diferentes. O GMD é uma estimativa média entre essas datas, não um ganho medido diariamente.
+• Preço por kg = preço do saco ÷ peso líquido do saco. Informe o peso líquido real, não o peso da embalagem.
+• Todas as funções essenciais funcionam offline depois que o app e os arquivos foram carregados no aparelho pelo menos uma vez. A instalação e a primeira atualização exigem internet.
+• Não sincroniza entre aparelhos. Faça backups JSON frequentes.
